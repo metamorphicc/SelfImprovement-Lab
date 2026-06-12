@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+dist/
+target/
+src-tauri/target/
+*.tsbuildinfo
+apps/desktop/src-tauri/gen/
+*.log
+.env
+.env.*
+!.env.example
+Self-Improvement-System-Prototype.zip

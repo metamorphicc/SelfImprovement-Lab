@@ -1,0 +1,22 @@
+{
+  "name": "self-improvement-labs",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @sil/web run dev",
+    "build:web": "npm --workspace @sil/web run build",
+    "dev:desktop": "npm --workspace @sil/desktop run dev",
+    "build:desktop": "npm --workspace @sil/desktop run build",
+    "build:desktop:bundle": "npm --workspace @sil/desktop run build:bundle",
+    "typecheck": "npm --workspaces --if-present run typecheck",
+    "lint": "npm --workspaces --if-present run lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self Improvement Labs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-button" id="menuButton" type="button" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="brand">
+        <strong>SYSTEM</strong>
+        <span>Self Improvement Labs</span>
+      </div>
+      <div class="sync-pill" id="syncStatus">Local</div>
+    </header>
+
+    <aside class="drawer" id="drawer" aria-label="Main menu">
+      <div class="drawer-head">
+        <div>
+          <strong>Command Center</strong>
+          <span>second brain</span>
+        </div>
+        <button class="close-button" id="closeDrawerButton" type="button" aria-label="Close menu">x</button>
+      </div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-section="profile" type="button">Profile</button>
+        <button class="nav-item" data-section="wallets" type="button">Wallets</button>
+        <button class="nav-item" data-section="inventory" type="button">Inventory</button>
+        <button class="nav-item" data-section="quests" type="button">Quests</button>
+        <button class="nav-item" data-section="skills" type="button">Skills</button>
+        <button class="nav-item" data-section="knowledge" type="button">Knowledge</button>
+        <button class="nav-item" data-section="settings" type="button">Settings</button>
+      </nav>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <main class="workspace">
+      <section class="screen active" id="profile">
+        <div class="hero-band">
+          <div class="hero-copy">
+            <p class="kicker">Player profile</p>
+            <h1>New Character</h1>
+            <p>Your profile gathers goals, resources, daily tasks, and your financial picture into one controllable system.</p>
+          </div>
+          <div class="level-core">
+            <span>LV</span>
+            <strong>01</strong>
+            <small>initializing</small>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Stats</h2>
+              <span>draft build</span>
+            </div>
+            <div class="stat-grid">
+              <div><span>Focus</span><strong>3</strong></div>
+              <div><span>Body</span><strong>2</strong></div>
+              <div><span>Will</span><strong>4</strong></div>
+              <div><span>Creative</span><strong>5</strong></div>
+              <div><span>Social</span><strong>2</strong></div>
+              <div><span>Discipline</span><strong>1</strong></div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Asset Overview</h2>
+              <span id="walletCountLabel">0 addresses</span>
+            </div>
+            <div class="portfolio-total" id="portfolioTotal">$0.00</div>
+            <div class="mini-bars">
+              <div><span>EVM</span><strong id="evmTotal">$0.00</strong></div>
+              <div><span>Solana</span><strong id="solanaTotal">$0.00</strong></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen" id="wallets">
+        <div class="screen-head">
+          <div>
+            <p class="kicker">Wallet inventory</p>
+            <h1>Wallets and Assets</h1>
+          </div>
+          <label class="threshold-control">
+            <span>Threshold</span>
+            <input id="thresholdInput" type="number" min="0" step="0.5" value="1">
+            <span>USD</span>
+          </label>
+        </div>
+
+        <div class="grid wallet-layout">
+          <section class="panel">
+            <div class="panel-title">
+              <h2>Connected Addresses</h2>
+              <span>local list</span>
+            </div>
+            <form id="walletForm" class="wallet-form">
+              <label>
+                <span>Label</span>
+                <input id="walletLabel" type="text" placeholder="Main, cold, trading">
+              </label>
+              <label>
+                <span>Network</span>
+                <select id="walletChain">
+                  <option value="evm">EVM</option>
+                  <option value="solana">Solana</option>
+                </select>
+              </label>
+              <label class="address-field">
+                <span>Address</span>
+                <input id="walletAddress" type="text" placeholder="0x... or Solana address">
+              </label>
+              <button class="primary-button" type="submit">Add Address</button>
+            </form>
+            <div class="form-message" id="walletMessage"></div>
+            <div class="wallet-list" id="walletList"></div>
+          </section>
+
+          <section class="panel assets-panel">
+            <div class="panel-title">
+              <h2>Tokens</h2>
+              <span>demo estimate</span>
+            </div>
+            <div class="asset-table-wrap">
+              <table class="asset-table">
+                <thead>
+                  <tr>
+                    <th>Token</th>
+                    <th>Network</th>
+                    <th>Balance</th>
+                    <th>USD</th>
+                  </tr>
+                </thead>
+                <tbody id="assetRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen" id="inventory">
+        <div class="screen-head">
+          <div>
+            <p class="kicker">Inventory</p>
+            <h1>Inventory</h1>
+          </div>
+        </div>
+        <div class="inventory-grid">
+          <div>Documents</div>
+          <div>Ideas</div>
+          <div>Resources</div>
+          <div>Contacts</div>
+          <div>Artifacts</div>
+          <div>Purchases</div>
+          <div>Projects</div>
+          <div>Empty</div>
+        </div>
+      </section>
+
+      <section class="screen placeholder" id="quests">
+        <h1>Quests</h1>
+        <p>Daily tasks, story arcs, and rewards will appear in the next layer.</p>
+      </section>
+
+      <section class="screen placeholder" id="skills">
+        <h1>Skills</h1>
+        <p>Skill trees will track body, focus, money, relationships, learning, and projects.</p>
+      </section>
+
+      <section class="screen placeholder" id="knowledge">
+        <h1>Knowledge Base</h1>
+        <p>A place for notes, decisions, links, and personal rules, structured with game logic.</p>
+      </section>
+
+      <section class="screen placeholder" id="settings">
+        <h1>Settings</h1>
+        <p>Theme, privacy, API keys, exports, and data backups will live here.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

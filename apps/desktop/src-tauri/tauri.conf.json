@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Self Improvement Labs",
+  "version": "0.1.0",
+  "identifier": "com.selfimprovementlabs.desktop",
+  "build": {
+    "beforeDevCommand": "npm --workspace @sil/web run dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm --workspace @sil/web run build",
+    "frontendDist": "../../web/out"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Self Improvement Labs",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 980,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "category": "Productivity",
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "shortDescription": "A personal RPG system.",
+    "longDescription": "A personal RPG system for profile, quests, inventory, wallets, and real-life progression."
+  }
+}
