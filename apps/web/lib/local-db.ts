@@ -1,11 +1,30 @@
-import type { PlayerProfile, WalletAddress } from "@sil/core";
+import type {
+  DailyLog,
+  DailyState,
+  InventoryItem,
+  KnowledgeNote,
+  PlayerAchievement,
+  PlayerProfile,
+  ProgressEvent,
+  ProviderConfig,
+  QuestGroup,
+  WalletAddress
+} from "@sil/core";
 
 export type AppLanguage = "en" | "ru";
 export type AppTheme = "milk" | "cocoa";
 
 export type LocalAppState = {
+  achievements: PlayerAchievement[];
+  dailyHistory: DailyLog[];
+  dailyState: DailyState;
+  inventoryItems: InventoryItem[];
   language: AppLanguage;
+  knowledgeNotes: KnowledgeNote[];
   profile: PlayerProfile;
+  progressEvents: ProgressEvent[];
+  providers: ProviderConfig;
+  questGroups: QuestGroup[];
   theme: AppTheme;
   wallets: WalletAddress[];
 };

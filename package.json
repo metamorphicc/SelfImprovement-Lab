@@ -13,6 +13,7 @@
     "dev:desktop": "npm --workspace @sil/desktop run dev",
     "build:desktop": "npm --workspace @sil/desktop run build",
     "build:desktop:bundle": "npm --workspace @sil/desktop run build:bundle",
+    "release:desktop": "npm run typecheck && npm run build:desktop:bundle",
     "typecheck": "npm --workspaces --if-present run typecheck",
     "lint": "npm --workspaces --if-present run lint"
   },

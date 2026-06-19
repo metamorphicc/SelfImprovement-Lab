@@ -1,13 +1,50 @@
+# dependencies
 node_modules/
-.next/
-out/
-dist/
-target/
-src-tauri/target/
-*.tsbuildinfo
-apps/desktop/src-tauri/gen/
-*.log
+
+# environment and local secrets
 .env
 .env.*
+*.local
 !.env.example
-Self-Improvement-System-Prototype.zip
+
+# Next.js / web output
+.next/
+apps/web/.next/
+out/
+apps/web/out/
+*.tsbuildinfo
+
+# Tauri / Rust output
+target/
+src-tauri/target/
+apps/desktop/src-tauri/target/
+apps/desktop/src-tauri/gen/
+*.pdb
+
+# packaged desktop builds and archives
+dist/
+*.exe
+*.msi
+*.nsis.zip
+*.zip
+*.7z
+*.rar
+
+# local databases and generated app state
+*.db
+*.sqlite
+*.sqlite3
+*.ldb
+
+# logs and diagnostics
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# test/build caches
+.turbo/
+coverage/
+playwright-report/
+test-results/

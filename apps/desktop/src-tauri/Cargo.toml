@@ -1,7 +1,7 @@
 [package]
 name = "self-improvement-labs"
 version = "0.1.0"
-description = "A personal RPG system for real-life progression."
+description = "An offline-first personal RPG system for real-life progression."
 authors = ["Self Improvement Labs"]
 edition = "2021"
 

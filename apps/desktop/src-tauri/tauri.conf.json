@@ -28,11 +28,28 @@
   "bundle": {
     "active": true,
     "targets": ["nsis"],
+    "publisher": "Self Improvement Labs",
+    "copyright": "Copyright 2026 Self Improvement Labs. All rights reserved.",
     "category": "Productivity",
     "icon": [
       "icons/icon.ico"
     ],
-    "shortDescription": "A personal RPG system.",
-    "longDescription": "A personal RPG system for profile, quests, inventory, wallets, and real-life progression."
+    "shortDescription": "A private desktop RPG system for real-life progression.",
+    "longDescription": "An offline-first personal command center for profile progression, quests, skills, knowledge, inventory, wallets, daily history, and backups.",
+    "windows": {
+      "allowDowngrades": false,
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "installMode": "currentUser",
+        "languages": ["English", "Russian"],
+        "displayLanguageSelector": true,
+        "startMenuFolder": "Self Improvement Labs"
+      }
+    }
   }
 }
